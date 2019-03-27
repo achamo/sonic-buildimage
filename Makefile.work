@@ -96,6 +96,7 @@ DOCKER_BUILD = docker build --no-cache \
 	       --build-arg uid=$(shell id -u) \
 	       --build-arg guid=$(shell id -g) \
 	       --build-arg hostname=$(shell echo $$HOSTNAME) \
+	       --build-arg workdir=$(DOCKER_BUILDER_WORKDIR) \
 	       -t $(SLAVE_IMAGE) \
 	       -f $(SLAVE_DIR)/Dockerfile.user \
 	       $(SLAVE_DIR) && \
